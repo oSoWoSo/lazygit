@@ -86,6 +86,13 @@ func TestNewTranslationSetFromConfig(t *testing.T) {
 			expectedErr:    false,
 		},
 		{
+			name:           "auto-detection with LANG set to cs_CZ",
+			configLanguage: "auto",
+			envLanguage:    "cs_CZ",
+			expected:       "cs",
+			expectedErr:    false,
+		},
+		{
 			name:           "auto-detection with LANG set to zh-CN",
 			configLanguage: "auto",
 			envLanguage:    "zh-CN",
