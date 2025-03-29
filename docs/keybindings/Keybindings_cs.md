@@ -261,6 +261,19 @@ Chcete-li místo toho zahájit interaktivní rebase z vybraného odevzdání, st
 | `` w `` | Zobrazit možnosti pracovního stromu |  |
 | `` / `` | Filtrovat aktuální zobrazení podle textu |  |
 
+## Schovka
+
+| Key | Action | Info |
+|-----|--------|-------------|
+| `` <space> `` | Použít | Použijte záznam ze schránky na pracovní adresář. |
+| `` g `` | Vytáhnout | Použijte záznam ze schránky na pracovní adresář a odeberte záznam ze schránky. |
+| `` d `` | Vymazat | Odeberte položku schránky ze seznamu schránky. |
+| `` n `` | Nová pobočka | Vytvořte novou větev z vybrané položky schránky. Funguje to tak, že se git přepne na odevzdání, na kterém byl záznam pro skrýš vytvořen, vytvoří z tohoto odevzdání novou větev a poté použije záznam skrýše na novou větev jako další odevzdání. |
+| `` r `` | Změnit název schránky |  |
+| `` <enter> `` | Zobrazit soubory |  |
+| `` w `` | Zobrazit možnosti pracovního stromu |  |
+| `` / `` | Filtrovat aktuální zobrazení podle textu |  |
+
 ## Soubory
 
 | Key | Action | Info |
@@ -358,18 +371,5 @@ Chcete-li místo toho zahájit interaktivní rebase z vybraného odevzdání, st
 | `` g `` | Reset | Zobrazení možností resetování (měkké/smíšené/tvrdé) pro vybranou položku. |
 | `` <c-t> `` | Otevřít externí nástroj pro porovnání (git difftool) |  |
 | `` <enter> `` | Zobrazit závazky |  |
-| `` w `` | Zobrazit možnosti pracovního stromu |  |
-| `` / `` | Filtrovat aktuální zobrazení podle textu |  |
-
-## Úložný prostor
-
-| Key | Action | Info |
-|-----|--------|-------------|
-| `` <space> `` | Použít | Použijte záznam ze schránky na pracovní adresář. |
-| `` g `` | Vytáhnout | Použijte záznam ze schránky na pracovní adresář a odeberte záznam ze schránky. |
-| `` d `` | Vymazat | Odeberte položku schránky ze seznamu schránky. |
-| `` n `` | Nová pobočka | Vytvořte novou větev z vybrané položky schránky. Funguje to tak, že se git přepne na odevzdání, na kterém byl záznam pro skrýš vytvořen, vytvoří z tohoto odevzdání novou větev a poté použije záznam skrýše na novou větev jako další odevzdání. |
-| `` r `` | Změnit název schránky |  |
-| `` <enter> `` | Zobrazit soubory |  |
 | `` w `` | Zobrazit možnosti pracovního stromu |  |
 | `` / `` | Filtrovat aktuální zobrazení podle textu |  |
