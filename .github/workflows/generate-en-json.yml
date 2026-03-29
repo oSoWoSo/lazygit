@@ -1,0 +1,44 @@
+name: Generate en.json for Weblate
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'pkg/i18n/english.go'
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Generate en.json
+        run: go run cmd/i18n/main.go
+
+      - name: Move to translations dir
+        run: mv en.json pkg/i18n/translations/en.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pkg/i18n/translations/en.json
+          if git diff --cached --quiet; then
+            echo "No changes to en.json"
+          else
+            git commit -m "i18n: update en.json from english.go"
+            git push
+          fi
+
+      - name: Notify Weblate
+        if: success()
+        run: |
+          curl -s -X POST \
+            -H "Authorization: Token ${{ secrets.WEBLATE_TOKEN }}" \
+            "${{ secrets.WEBLATE_URL }}/api/components/lazygit/lazygit/repository/" \
+            -d '{"operation":"pull"}'
